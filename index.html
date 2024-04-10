@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <title>IP Address Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- leaflet's css file -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- leaflet's js file -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="//cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.js"></script>
+
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="p-0 p-md-3" id="container">
+    <div class="container-md-fluid" id="container-wrap">
+      <div class="container mt-0 mt-md-3" id="header">
+        
+
+        <div class="row pb-4">
+          <div class="col-10 col-md-5 mx-auto center-align">
+            <h3 class="text-center pt-2 pt-md-5 ">
+              Best Online IP Tracker
+            </h3>
+            <form>
+              <div class="input-group mb-1 mb-md-3">
+                <input type="text" class="form-control" placeholder="Search for any ip address or domain" id="ip" />
+                <button onclick="event.preventDefault();getLocation(document.getElementById('ip').value);"
+                  value="submit" class="btn1" id="imgbackground">
+                  <i class="fa-solid fa-magnifying-glass text-light"></i>
+                 </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-5">
+          <h4 class="pt-2 pt-md-5 tex-dark">
+            
+          </h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">IP ADDRESS</th>
+                  <th scope="col" id="ipa" value="ip">_</th>
+                </tr>
+                <tr>
+                  <th scope="col">LOCATION</th>
+                  <th scope="col" id="loc" value="loc">_</th>
+                </tr>
+                <tr>
+                  <th scope="col">TIMEZONE</th>
+                  <th scope="col" id="time" value="time">_</th>
+                </tr>
+                <tr>
+                  <th scope="col">ISP</th>
+                  <th scope="col" id="isp" value="isp">_</th>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        
+        <div class="col-7">
+          <div class="container">
+            <div class="row" id="map-container">
+              <div class="col-12" id="map-wrap-container">
+                <div id="mapid"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="attribution">
+    Developed by <a href="https://www.linkedin.com/in/bibinbinoy/">Bibin Binoy</a>.
+  </div>
+  <script src="script.js"></script>
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
